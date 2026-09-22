@@ -1,0 +1,10 @@
+- insert:
+    - id: dsh-wsl-llamacpp
+      name: dsh-wsl-llamacpp
+      config:
+        enabled: true
+        # llama.cpp server / Unsloth Desktop OpenAI endpoint
+        baseUrl: "http://127.0.0.1:8080"
+        defaultModel: ""
+        timeoutMs: 120000
+        maxPromptChars: 32000
