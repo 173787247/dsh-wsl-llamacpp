@@ -2,18 +2,35 @@
 
 > **语言：** **中文**（本页） · [English](./README.en.md)
 
-对接本机 **llama.cpp server / Unsloth Desktop** 的 OpenAI 兼容接口（默认 http://127.0.0.1:8080）。
+对接本机 llama.cpp / Unsloth Desktop 的 OpenAI 兼容接口（默认 :8080）。
 
-可选插件，不在 install.sh。复用已有 GGUF，不重装工具链。
+| | |
+|---|---|
+| 版本 | **0.1.0** |
+| 套件 | [dsh-wsl-kit](https://github.com/173787247/dsh-wsl-kit) **可选**，不在 `install.sh` |
+
+## 安装
+
+```sh
+dsh plugin --profile web add github:173787247/dsh-wsl-llamacpp
+# 或本机 path：
+# dsh plugin --profile web add /mnt/c/Users/YOU/Desktop/AIFullStackDevelopment/dsh-wsl-llamacpp
+```
+
+kit 批量链接（可选）：`bash dsh-wsl-kit/scripts/link-linux-plugins.sh`
 
 ## 工具
 
 | 工具 | 作用 |
 |------|------|
-| `llama_status` | 是否可达、模型列表 |
-| `llama_chat` | `/v1/chat/completions` |
+| `llama_status` | 是否可达、模型 id |
+| `llama_chat` | /v1/chat/completions |
 
-环境变量：`DSH_LLAMA_BASE`、`DSH_LLAMA_MODEL`。
+## 配置要点
+
+`baseUrl / defaultModel / timeoutMs`
+
+复用已有 GGUF，不重装工具链。环境变量：`DSH_LLAMA_BASE`、`DSH_LLAMA_MODEL`。
 
 ## License
 
